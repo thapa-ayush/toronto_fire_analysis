@@ -235,7 +235,7 @@ Four-page interactive dashboard with amber/fire color theme for executive insigh
 ### Page 1: Home Overview
 Project introduction with key metrics and navigation.
 
-![Home Page](img/home.png)
+![Home Page](powerbi_exports/fire_incidents_page-0001.jpg)
 
 ### Page 2: Executive Dashboard
 Comprehensive view of city-wide fire incident trends and patterns.
@@ -246,21 +246,17 @@ Comprehensive view of city-wide fire incident trends and patterns.
 - Average Response Time: 5.36 minutes
 - Total Casualties: 1,881
 
-![Executive Dashboard - Dollar Loss](img/dollar%20loss.png)
-
-![Executive Dashboard - Casualties](img/casualty.png)
-
-![Executive Dashboard - Response Time](img/time.png)
+![Executive Dashboard](powerbi_exports/fire_incidents_page-0002.jpg)
 
 ### Page 3: Ward Analysis
 Geographic risk assessment across Toronto's 44 wards with response time disparities.
 
-![Ward Navigation Menu](img/menu.png)
+![Ward Analysis Map](powerbi_exports/fire_incidents_page-0003.jpg)
 
 ### Page 4: Safety Equipment Analysis
 Quantified impact of smoke alarms and sprinkler systems on fire outcomes.
 
-![Safety Equipment - Fire Alarm Effectiveness](img/fire-alarm.png)
+![Safety Equipment Analysis](powerbi_exports/fire_incidents_page-0004.jpg)
 
 ---
 
