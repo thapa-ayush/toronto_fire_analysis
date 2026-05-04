@@ -6,6 +6,8 @@ A comprehensive data analysis of 36,559 fire incidents recorded by Toronto Fire 
 **Data Period:** 2011-2024  
 **Last Updated:** May 2026
 
+**Repository Contents:** SQL queries, Python data pipeline, Jupyter notebooks, Power BI design assets, and analysis documentation. Large data files (CSV, PBIX) are stored locally — see [Getting the Data](#getting-the-data) section below.
+
 ---
 
 ## Key Insights
@@ -64,7 +66,7 @@ The pipeline processes raw City of Toronto open data into a production-ready SQL
 ```
 fire_analysis/
 ├── data/
-│   └── fire_incidents_data.csv              Raw dataset from Toronto Open Data Portal
+│   └── fire_incidents_data.csv              Raw dataset from Toronto Open Data Portal (81 MB)
 ├── notebooks/
 │   ├── 01_data_cleaning.ipynb              Exploration and data quality assessment
 │   └── 02_load_to_sql.py                   Automated data load to SQL Server
@@ -80,10 +82,19 @@ fire_analysis/
 ├── outputs/
 │   ├── fire_incidents_cleaned.csv          Processed dataset (49 columns)
 │   └── cleaning_log.md                     Data quality and transformation log
+├── img/
+│   ├── home.png                            Power BI Home page screenshot
+│   ├── dollar_loss.png                     Dollar loss analysis visualization
+│   ├── casualty.png                        Casualty metrics dashboard
+│   ├── time.png                            Response time KPI cards
+│   ├── menu.png                            Navigation menu
+│   └── fire-alarm.png                      Safety equipment analysis
 ├── powerbi_exports/
 │   └── Toronto_Fire_Analysis.pbix          4-page interactive dashboard
 └── README.md                               This file
 ```
+
+**Note on Large Files:** Data CSV files (81+ MB) are stored locally but not committed to Git to avoid connection timeouts. Download the raw dataset directly from the [City of Toronto Open Data Portal](https://open.toronto.ca/).
 
 ---
 
@@ -123,6 +134,14 @@ Power BI Desktop dashboard with 4 pages: Home overview, Executive dashboard, War
 - SQL Server 2019+ (running locally)
 - ODBC Driver 17 for SQL Server
 - Power BI Desktop (for dashboard viewing)
+
+### Getting the Data
+
+**Important:** Large CSV files (81+ MB) are not stored in this Git repository to prevent connection timeouts. Download them directly:
+
+1. **Raw data:** Download from [City of Toronto Open Data Portal - Fire Incidents](https://open.toronto.ca/dataset/fire-incidents/)
+2. **Processed data:** After running `02_load_to_sql.py`, the cleaned CSV will be generated in `outputs/`
+3. Place `fire_incidents_data.csv` in the `data/` folder before proceeding
 
 ### Setup
 
@@ -211,37 +230,37 @@ Despite incident growth, casualties declined 55% from 2016 peak (183) to 2024 (8
 
 ## Power BI Dashboard
 
-Four-page interactive dashboard with amber/fire color theme:
+Four-page interactive dashboard with amber/fire color theme for executive insights and operational analysis.
 
-**Page 1 - Home:** Project overview with firefighter illustration and navigation buttons
+### Page 1: Home Overview
+Project introduction with key metrics and navigation.
 
 ![Home Page](img/home.png)
 
-**Page 2 - Executive Overview:** 
-- 4 KPI cards (total incidents, dollar loss, avg response, casualties)
-- Dual-axis trend line (incidents vs dollar loss)
-- Property type bar chart
-- Incident distribution by hour
+### Page 2: Executive Dashboard
+Comprehensive view of city-wide fire incident trends and patterns.
 
-![Dollar Loss Analysis](img/dollar%20loss.png)
+**Metrics Displayed:**
+- Total Incidents: 36,559
+- Total Dollar Loss: $722.64M
+- Average Response Time: 5.36 minutes
+- Total Casualties: 1,881
 
-![Casualties Insight](img/casualty.png)
+![Executive Dashboard - Dollar Loss](img/dollar%20loss.png)
 
-![Response Time KPI](img/time.png)
+![Executive Dashboard - Casualties](img/casualty.png)
 
-**Page 3 - Ward Analysis:**
-- Bing map of Toronto with incident density
-- Slowest wards bar chart
-- Ward risk ranking table with RANK() function
+![Executive Dashboard - Response Time](img/time.png)
 
-![Menu Navigation](img/menu.png)
+### Page 3: Ward Analysis
+Geographic risk assessment across Toronto's 44 wards with response time disparities.
 
-**Page 4 - Safety Analysis:**
-- Smoke alarm effectiveness matrix
-- Sprinkler system impact charts
-- Key findings and recommendations
+![Ward Navigation Menu](img/menu.png)
 
-![Fire Alarm Effectiveness](img/fire-alarm.png)
+### Page 4: Safety Equipment Analysis
+Quantified impact of smoke alarms and sprinkler systems on fire outcomes.
+
+![Safety Equipment - Fire Alarm Effectiveness](img/fire-alarm.png)
 
 ---
 
